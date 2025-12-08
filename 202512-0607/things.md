@@ -13,3 +13,9 @@ wiki:https://zh.wikipedia.org/wiki/基于内核的虚拟机
 redhat:https://www.redhat.com/zh-cn/topics/virtualization/what-is-KVM
 
 archwiki:https://wiki.archlinux.org/title/KVM
+
+### KVM in RISC-V
+
+qemu-system-riscv64竟然支持--enable-kvm:https://github.com/IPADS-DuVisor/kvm-tutorial
+
+kvm-riscv:https://github.com/kvm-riscv/howto/wiki
