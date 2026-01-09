@@ -1,6 +1,8 @@
 # Weekend things
 
-202512-2728：[Linux BPF](202512-2728/things.md)
+202601-1011 : Fuzzing the eBPF Runtime
+
+202512-2728 : [Linux BPF](202512-2728/things.md)
 
 202512-2021 : [RISC-V H](202512-2021/things.md)
 
