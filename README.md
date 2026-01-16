@@ -1,5 +1,7 @@
 # Weekend things
 
+202601-1718 : [RISC-V KVM](202601-1718/things.md)
+
 202601-1011 : [Fuzzing the eBPF Runtime](202601-1011/things.md)
 
 202512-2728 : [Linux BPF](202512-2728/things.md)
