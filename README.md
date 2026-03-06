@@ -1,5 +1,7 @@
 # Weekend things
 
+202603-0708: [selftests/kvm kcov](202603-0708/things.md)
+
 202601-3132 : [Syzkaller SYZOS](202601-3132/things.md)
 
 202601-2425 : [WARN_ON](202601-2425/things.md)
