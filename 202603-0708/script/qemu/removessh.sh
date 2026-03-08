@@ -1,0 +1,1 @@
+ssh-keygen -f "/home/jiakai/.ssh/known_hosts" -R "[localhost]:18775"
