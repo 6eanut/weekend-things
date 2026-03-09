@@ -7,7 +7,7 @@ set -x  # 开启命令追踪，显示每条命令
 # ==============================
 SSH_PORT=18775
 SSH_TARGET=root@localhost
-KCOV_WRAPPER="./kcov-wrapper"
+KCOV_WRAPPER="./kcov-wrapper-ptrace"
 KCOV_SYM="kcov-sym.py"
 KVM_SELFTEST_DIR="./kvm-selftest"
 RESULT_DIR="./results"
@@ -55,6 +55,7 @@ for t in "${TESTS[@]}"; do
     check_qemu_alive
 
     ssh -p "$SSH_PORT" "$SSH_TARGET" "rm -f pcs.txt"
+    ssh -p "$SSH_PORT" "$SSH_TARGET" "rm -f pcs_detailed.txt"
 
     ssh -p "$SSH_PORT" "$SSH_TARGET" "$KCOV_WRAPPER $KVM_SELFTEST_DIR/$t"
 
@@ -62,6 +63,9 @@ for t in "${TESTS[@]}"; do
 
     PCS_HOST="$RESULT_DIR/${t}_pcs.txt"
     scp -P "$SSH_PORT" "$SSH_TARGET":/root/pcs.txt "$PCS_HOST"
+    
+    PCS_DETAILED_HOST="$RESULT_DIR/${t}_pcs_detailed.txt"
+    scp -P "$SSH_PORT" "$SSH_TARGET":/root/pcs_detailed.txt "$PCS_DETAILED_HOST"
 
     python3 "$KCOV_SYM" /home/jiakai/0308selftest_kvm_kcov/kvm-riscv/vmlinux "$PCS_HOST"
     
