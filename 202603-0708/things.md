@@ -43,13 +43,13 @@ make ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- -C tools/testing/selftests/kvm 
 ./ssh.sh
 ./scp.sh
 
-# step3-1: kcov-wrapper/host 
-riscv64-linux-gnu-gcc kcov-wrapper.c -o kcov-wrapper
-scp -P 18775 kcov-wrapper root@localhost:/root
+# step3-1: kcov-wrapper-ptrace/host 
+riscv64-linux-gnu-gcc kcov-wrapper-ptrace.c -o kcov-wrapper-ptrace
+scp -P 18775 kcov-wrapper-ptrace root@localhost:/root
 scp -P 18775 ./kvm-selftest/sbi_pmu_test root@localhost:/root
-# step3-2: kcov-wrapper/qemu
-./kcov-wrapper ./sbi_pmu_test
-# step3-3: kcov-wrapper/host
+# step3-2: kcov-wrapper-ptrace/qemu
+./kcov-wrapper-ptrace ./sbi_pmu_test
+# step3-3: kcov-wrapper-ptrace/host
 scp -P 18775 root@localhost:/root/pcs.txt .
 python3 kcov-sym.py ./vmlinux pcs.txt
 
