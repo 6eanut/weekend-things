@@ -1,5 +1,7 @@
 # Weekend things
 
+202603-2122: [OpenClaw/PicoClaw in RISC-V](202603-2122/things.md)
+
 202603-0708: [selftests/kvm kcov](202603-0708/things.md)
 
 202601-3132 : [Syzkaller SYZOS](202601-3132/things.md)
