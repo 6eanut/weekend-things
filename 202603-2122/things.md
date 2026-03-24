@@ -1,5 +1,22 @@
 # OpenClaw/PicoClaw in RISC-V
 
+又来了，之前配的是picoclaw，感觉不好用，然后在[公众号](https://mp.weixin.qq.com/s/S_6GweaJ1KmNbaP84QJSZQ?scene=1)找了一些skills，发现需要配node.js，但是node.js官方还没支持riscv64的prebuilt deb包，所以只好用unofficial的，下面记录一下：
+
+```
+curl -LO https://github.com/gounthar/unofficial-builds/releases/download/v24.12.0/nodejs-unofficial_24.12.0-1_riscv64.deb
+sudo dpkg -i nodejs-unofficial_24.12.0-1_riscv64.deb
+/opt/nodejs-unofficial/bin/node --version
+```
+
+装openclaw也很方便：
+
+```
+curl -fsSL https://openclaw.ai/install.sh | bash
+# 不过具体配置还没研究
+```
+
+---
+
 超级心累....
 
 明白为啥都叫“养"龙虾了，因为最初用它，如果不配置memory/soul/skills，那和用一个web-LLM没区别。
