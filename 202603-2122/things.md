@@ -12,8 +12,9 @@ sudo dpkg -i nodejs-unofficial_24.12.0-1_riscv64.deb
 
 ```
 curl -fsSL https://openclaw.ai/install.sh | bash
-# 不过具体配置还没研究
 ```
+
+具体配置的话，上网查就ok了，有很多教程。
 
 ---
 
