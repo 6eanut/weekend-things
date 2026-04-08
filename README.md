@@ -1,5 +1,7 @@
 # Weekend things
 
+202604-1112: [Fuzz and Testcase](202604-1112/things.md)
+
 202603-2829: [RISC-V AIA in QEMU/kvm-unit-tests](202603-2829/things.md)
 
 202603-2122: [OpenClaw/PicoClaw in RISC-V](202603-2122/things.md)
