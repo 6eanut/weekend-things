@@ -1,0 +1,117 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace"
+    }
+  },
+  "models": {
+    "mode": "replace",
+    "providers": {
+      "modelstudio": {
+        "baseUrl": "url",
+        "apiKey": "apikey",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "DeepSeek-V3.2",
+            "name": "DeepSeek-V3.2",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 9999999999999999999,
+            "maxTokens": 999999999999999999
+          },
+          {
+            "id": "Qwen3.5-397B-A17B",
+            "name": "Qwen3.5-397B-A17B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 9999999999999,
+            "maxTokens": 999999999999
+          },
+          {
+            "id": "GLM-5-Turbo",
+            "name": "GLM-5-Turbo",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 9999999999999999999,
+            "maxTokens": 9999999999999999999
+          }
+        ]
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "token"
+    },
+    "port": 12345,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send",
+        "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-04-09T03:19:18.238Z",
+    "lastRunVersion": "2026.4.9",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.4.9",
+    "lastTouchedAt": "2026-04-09T03:19:18.395Z"
+  }
+}

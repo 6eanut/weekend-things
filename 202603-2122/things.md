@@ -1,5 +1,85 @@
 # OpenClaw/PicoClaw in RISC-V
 
+又来了，记录一下在x86上搭openclaw的过程
+
+```
+docker pull ubuntu:26.04
+docker run -it \
+--privileged \
+--network=host \
+--ipc=host \
+--cap-add=SYS_ADMIN \
+--security-opt seccomp=unconfined \
+ubuntu:26.04 \
+/bin/bash
+
+apt update
+apt upgrade
+apt install sudo curl build-essential systemd vim -y
+
+curl -fsSL https://openclaw.ai/install.sh | bash
+
+# openclaw.json
+  "models": {
+    "mode": "replace",
+    "providers": {
+      "modelstudio": {
+        "baseUrl": "url",
+        "apiKey": "apikey",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "DeepSeek-V3.2",
+            "name": "DeepSeek-V3.2",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 9999999999999999999,
+            "maxTokens": 999999999999999999
+          },
+          {
+            "id": "Qwen3.5-397B-A17B",
+            "name": "Qwen3.5-397B-A17B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 9999999999999,
+            "maxTokens": 999999999999
+          },
+          {
+            "id": "GLM-5-Turbo",
+            "name": "GLM-5-Turbo",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 9999999999999999999,
+            "maxTokens": 9999999999999999999
+          }
+        ]
+      }
+    }
+  },
+
+npx clawhub@latest install sonoscli --registry=https://cn.clawhub-mirror.com
+
+https://clawhub.ai/pskoett/self-improving-agent
+https://clawhub.ai/oswalpalash/ontology
+https://clawhub.ai/matrixy/agent-browser-clawdbot
+https://clawhub.ai/guohongbin-git/skill-finder-cn
+https://clawhub.ai/ivangdavila/productivity
+https://clawhub.ai/othmanadi/planning-with-files
+https://clawhub.ai/wscats/code-analysis-skills
+https://clawhub.ai/ivangdavila/skill-finder
+https://clawhub.ai/russellfei/file-manager
+
+这些是我找到的技能，你来安装并且配置一下吧
+```
+
+---
+
 又来了，之前配的是picoclaw，感觉不好用，然后在[公众号](https://mp.weixin.qq.com/s/S_6GweaJ1KmNbaP84QJSZQ?scene=1)找了一些skills，发现需要配node.js，但是node.js官方还没支持riscv64的prebuilt deb包，所以只好用unofficial的，下面记录一下：
 
 ```
