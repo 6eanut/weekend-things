@@ -1,5 +1,11 @@
 # OpenClaw/PicoClaw in RISC-V
 
+openclaw有很多bug，有的版本比较稳定，有的版本很多错误，所以轻易不要更新
+
+对于RISC-V而言，用2026.3.22就行
+
+---
+
 又来了，记录一下在x86上搭openclaw的过程
 
 ```
