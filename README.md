@@ -1,6 +1,6 @@
 # Weekend things
 
-202605-2324: [SBI](202605-2324/things.md)
+202605-2324: [SBI and Linux Sashiko](202605-2324/things.md)
 
 202605-0910: [Plugin Coding Agent](202605-0910/things.md)
 
