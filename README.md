@@ -1,5 +1,7 @@
 # Weekend things
 
+202606-0607: [KaiTi Prepare](202606-0607/things.md)
+
 202605-3031: [OpenSkills, RCAgent, HipKittens, busybox-afl](202605-3031/things.md)
 
 202605-2324: [SBI and Linux Sashiko](202605-2324/things.md)

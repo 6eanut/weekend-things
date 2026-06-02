@@ -4,7 +4,7 @@
   * [X] RCAgent
 * [ ] intern: AI辅助优化kernel
   * [X] 资料里面提到的一些开源项目
-  * [ ] hipkittens
-  * [ ] *https://github.com/mit-han-lab/kernel-design-agents*
+  * [X] hipkittens
+  * [X] *https://github.com/mit-han-lab/kernel-design-agents*
 * [X] busybox fuzz跑起来
   * [X] 测配置项管的代码比例
