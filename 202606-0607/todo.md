@@ -8,7 +8,7 @@
 6. 研究工作计划与进度安排
 7. 参考文献
 
-* [ ] 辅助AI工具：https://github.com/aiming-lab/AutoResearchClaw
-* [ ] cudanalyst的具体应用
-* [ ] 自传
+* [X] 辅助AI工具：https://github.com/aiming-lab/AutoResearchClaw
+* [X] cudanalyst的具体应用
+* [X] 自传
 * [ ] 挑战二的解决方案
