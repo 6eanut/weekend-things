@@ -1,1 +1,1 @@
-# Spec-kit, NDSS'26 and Skill2MCP
+# Spec-kit, NDSS'26, Skill2MCP, Multica, CC loop, DeepSeekCompressor and Virtual Device Fuzzing
