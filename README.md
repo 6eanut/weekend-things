@@ -1,6 +1,6 @@
 # Weekend things
 
-202606-1314: [Spec-kit, NDSS&#39;26 and Skill2MCP](202606-1314/things.md)
+202606-1314: [Spec-kit, NDSS&#39;26, Skill2MCP, Multica, CC loop, DeepSeekCompressor and Virtual Device Fuzzing](202606-1314/things.md)
 
 202606-0607: [Cudanalyst and AutoResearchClaw](202606-0607/things.md)
 
