@@ -55,3 +55,35 @@ https://multica.ai/6eanut-test/inbox
 改动量不大，正确性/速度评测给适配了就ok，然后是提示词(拿triton写的gemm做了测试，正确性验证用的是cpu端的matmul)
 
 ## Virtual Device Fuzzing
+
+* [X] VDF: Targeted Evolutionary Fuzz Testing of Virtual Devices(RAID'17)
+
+只对虚拟化设备相关的源码做插桩，只收集这部分的覆盖率情况，而后指导模糊测试
+
+* [X] HYPER-CUBE: High-Dimensional Hypervisor Fuzzing(NDSS'20)
+
+hypervisor的实现是多样的，之前工作会针对某一特定实现做定制fuzz，它提出这样通用性不好，所以我们的paper可能也要谈通用性，比如除了kvm，其他的hypervisor可以测试吗？需要面临什么挑战？
+
+* [X] Nyx: Greybox Hypervisor Fuzzing using Fast Snapshots and Affine Types(USENIX Security 21)
+
+对hypervisor做fuzz，一个很重要的需求是能够让每次测试种子执行的环境是干净的，这意味着需要重启/录制重放，但这在hypervisor的场景下代价很高，所以这篇文章提出了一种新的重制方法，即一个种子执行完之后不是重启，而是重制状态，把写的内容退回即可。
+
+> 作者发现，要在 Hypervisor 这种高度有状态的系统上实现覆盖引导 Fuzzing，关键在于**确保每个****测试用例****的可重复性** ——即每个测试用例必须从一个完全确定的、干净的状态开始执行。这意味着需要在**每次执行后重置整个****虚拟机****的全部状态** （包括内存、CPU 寄存器、所有模拟设备状态以及硬盘内容）。
+>
+> 传统的 VM 快照恢复机制（如 QEMU 的** **`loadvm` 命令）速度极慢，会在序列化/反序列化过程中浪费大量时间。作者的洞察是：可以通过**增量式****脏页****追踪 +** ******内存****直接复制 + 磁盘覆盖层**的方式，将快照恢复的操作从全量序列化转变为仅重置被修改的部分，从而将恢复速度提升到每秒数千次以上，接近 AFL 的 fork server 性能。
+
+* [X] V-Shuttle: Scalable and Semantics-Aware Hypervisor Virtual Device Fuzzing(CCS'21)
+
+vm-exit开销大，它提出类似注入的手段来解决。可能需要找一个注入方法带来的问题，比如得大量修改代码之类的，而且可能会引入假阳性和假阴性(修改代码带来的问题)
+
+* [X] Morphuzz: Bending (Input) Space to Fuzz Virtual Devices(USENIX Security 22)
+
+利用了hypervisor内在特性，这个很关键，我们也要强调，哪些问题是kvm特有的，解决方案如何是kvm特有的
+
+* [X] ViDeZZo: Dependency-aware Virtual Device Fuzzing(SP'23)
+
+提出了消息间/内部具有依赖关系，提出了一个dsl，编码这种依赖，测试器会从已有的种子里学习新依赖
+
+* [X] HYPERPILL: Fuzzing for Hypervisor-bugs by Leveraging the Hardware Virtualization Interface(USENIX Security 24)
+
+利用硬件规范去做vm-exit注入，很厉害
